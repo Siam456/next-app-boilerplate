@@ -3,16 +3,16 @@ import '@/styles/globals.css';
 
 import type { AppPropsWithLayout } from '@/types';
 
-import { GeneralLayout } from '@/layouts';
+// import { GeneralLayout } from '@/layouts';
 import useFonts from '@/hooks/useFonts';
 import { Provider } from 'react-redux';
 import store from '@/store';
 
 const ComponentMap: any = {
   none: ({ Component, pageProps }: AppPropsWithLayout) => (
-    <GeneralLayout>
+   
       <Component {...pageProps} />
-    </GeneralLayout>
+    
   ),
 };
 

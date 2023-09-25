@@ -17,11 +17,13 @@
   --blue-100: #f0fdff;
   --blue-200: #e2f8ff;
   --blue-300: #0aa6e0;
+  --blue-500: #3b82f6;
   --gray-100: #f3f8f8;
   --gray-200: #dae8e7;
   --gray-300: #8999b0;
   --gray-400: #5b706f;
-  --gray-900: #243030;
+  --gray-500: #6b7280;
+  --gray-900: #111827;
   -webkit-tap-highlight-color: transparent;
 }
 
