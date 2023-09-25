@@ -1,0 +1,30 @@
+@use 'fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: white;
+  --dark: #0a1214;
+  --green: #49ca21;
+  --yellow: #ed7e00;
+  --orange: #ff5b35;
+  --pink: #fd4680;
+  --magenta: #c345ff;
+  --purple-100: #e9e9ff;
+  --purple-200: #4c12a1;
+  --blue-100: #f0fdff;
+  --blue-200: #e2f8ff;
+  --blue-300: #0aa6e0;
+  --gray-100: #f3f8f8;
+  --gray-200: #dae8e7;
+  --gray-300: #8999b0;
+  --gray-400: #5b706f;
+  --gray-900: #243030;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply min-w-full;
+}
