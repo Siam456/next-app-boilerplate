@@ -38,7 +38,7 @@ function login() {
                     </div>  
                     <p className="mt-4 text-sm text-center text-gray-500">
                         Not a user?{' '}
-                        <Link href="/" className="text-blue-500 underline">
+                        <Link href="/signin" className="text-blue-500 underline">
                             Sign up here
                         </Link>
                     </p>

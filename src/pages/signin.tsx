@@ -59,7 +59,7 @@ function signin() {
                     </div>  
                     <p className="mt-4 text-sm text-center text-gray-500">
                         Already a user?{' '}
-                        <Link href="/" className="text-blue-500 underline">
+                        <Link href="/login" className="text-blue-500 underline">
                             Sign in here
                         </Link>
                     </p>
