@@ -1,6 +1,9 @@
+import { ChatbotLogo } from '@/logos';
 import Link from 'next/link';
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
+import { InputBox } from '@/components/input';
+import { SubmitButton } from '@/components/buttons';
 
 const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -10,51 +13,43 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         email: data.get('email'),
     });
 }
-
-function login() {
+function Login() {
     return (
-        <div className="flex p-0 items-center justify-center min-h-screen bg-gray-900">
-            <form className="p-0" onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-3 self-stretch p-0">
-                    <h2 className="text-2xl text-white justify-center font-semibold mb-4 text-center">Chatbot-23</h2>
-                    <h2 className="text-2xl text-white justify-center font-semibold mb-4 text-center">Sign in to your account</h2>
+        <div className="flex flex-col gap-5 max-md:p-5 px-6 py-12 items-center justify-center min-h-screen bg-gray-900">
+            <form className="w-full max-w-md   mx-auto" onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-3 self-stretch">
+                    <div className="flex items-center justify-center gap-2">
+                    <ChatbotLogo className="w-auto h-10 mx-auto" />
+                    </div>
+                    <h2 className="text-2xl text-white font-semibold py-8 text-center">Sign in to your account</h2>
+                    <InputBox 
+                        type="email"
+                        placeholder=""
+                        onChange={() => {}}
+                        label="Email Address"
+                        error={false}
+                        name="email"
+                    />
+                    <SubmitButton
+                        onClick={() => { } } icons={undefined}                    >
+                        Proceed
+                    </SubmitButton>
 
-                    <div className='flex flex-col gap-3'>
-                        <label className=' text-white text-sm font-bold' htmlFor='email'>  
-                            Email Address
-                            <input
-                                id='email'
-                                type='email'
-                                name='email'
-                                placeholder='Enter Email'
-                                className='shadow mt-3 border-gray-500 appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
-                            />
-                        </label>
-                        <button
-                            type="submit"
-                            className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">       
-                            Proceed
-                        </button>
-                    </div>  
-                    <p className="mt-4 text-sm text-center text-gray-500">
+                    <p className="text-sm text-center py-5 text-gray-500">
                         Not a user?{' '}
                         <Link href="/signin" className="text-blue-500 underline">
                             Sign up here
                         </Link>
                     </p>
-                    <p className="mt-2 text-sm text-center">
-                        <Link href="/" className="text-blue-500 underline">
-                            Forgot Password?
-                        </Link>
-                    </p>
-                    <div className="flex items-center justify-center text-sm font-medium leading-6">
+                    <div className="flex items-center justify-center text-sm font-medium">
                         <div className="bg-white h-px flex-grow" />
                         <span className="text-white px-4">Or</span>
                         <div className="bg-white h-px flex-grow" />
-                    </div>                    
+                    </div>  
+                                      
                     <button
                         type="button"
-                        className="bg-mainColor flex bg-white justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
+                        className="bg-mainColor flex bg-white justify-center items-center py-2 rounded-lg cursor-pointer outline-none"
                     >
                         <FcGoogle className="mr-4" /> Sign in with Google
                     </button>
@@ -64,4 +59,4 @@ function login() {
     );
 }
 
-export default login;
+export default Login;

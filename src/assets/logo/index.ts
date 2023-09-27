@@ -1,2 +1,3 @@
-export { default as NfteLogo } from './Nfte.svg';
-export { default as Tier } from './Tier.svg';
+// eslint-disable-next-line import/prefer-default-export
+export { default as ChatbotLogo } from './chat-logo.svg';
+

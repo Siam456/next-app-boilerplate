@@ -26,6 +26,7 @@ const config: Config = {
         200: 'var(--blue-200)',
         300: 'var(--blue-300)',
         500: 'var(--blue-500)',
+        600: 'var(--blue-600)',
       },
       gray: {
         100: 'var(--gray-100)',
@@ -33,7 +34,10 @@ const config: Config = {
         300: 'var(--gray-300)',
         400: 'var(--gray-400)',
         500: 'var(--gray-500)',
+        650: 'var(--gray-650)',
+        700: 'var(--gray-700)',
         900: 'var(--gray-900)',
+       
       },
     },
     extend: {

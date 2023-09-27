@@ -21,13 +21,13 @@ export default function App({
   pageProps,
   ...rest
 }: AppPropsWithLayout) {
-  const { lexend } = useFonts();
+  const { inter } = useFonts();
   const layout = Component.layout ?? 'none';
   const ModifiedComponent = ComponentMap[layout];
 
   return (
     <Provider store={store}>
-      <div className={lexend}>
+      <div className={inter}>
         <ModifiedComponent
           Component={Component}
           pageProps={pageProps}
