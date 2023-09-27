@@ -39,6 +39,9 @@ const config: Config = {
         900: 'var(--gray-900)',
        
       },
+      red: {
+        500: 'var(--red-500)',
+      },
     },
     extend: {
       backgroundImage: {

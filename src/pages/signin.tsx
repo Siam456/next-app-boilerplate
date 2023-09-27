@@ -1,64 +1,55 @@
 import Link from 'next/link';
 import React from 'react';
-import { InputBox } from '@/components/input';
+import { SInputBox } from '@/components/input';
 import { ChatbotLogo } from '@/logos';
+import { SubmitButton } from '@/components/buttons';
+import useCustomHook from '@/hooks/useCustomHook';
 
-const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  // eslint-disable-next-line no-console
-  console.log({
-    firstName: data.get('firstName'),
-    lastName: data.get('lastName'),
-    email: data.get('email'),
-  });
-};
+function SignIn() {
+  const { handleSubmit, register, errors, onsubmit } = useCustomHook();
 
-function signin() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-3 bg-gray-900 px-6 py-12">
-      <form className="mx-auto w-full   max-w-md" onSubmit={handleSubmit}>
+      <form
+        className="mx-auto w-full max-w-md"
+        onSubmit={handleSubmit(onsubmit)}
+      >
         <div className="flex flex-col gap-3 self-stretch">
           <div className="flex items-center justify-center gap-2">
             <ChatbotLogo className="mx-auto h-10 w-auto" />
           </div>
-          <h2 className="justify-center py-8 text-center text-2xl font-semibold  text-white">
+          <h2 className="justify-center py-8 text-center text-2xl font-semibold text-white">
             Sign up with your details
           </h2>
 
           <div className="flex flex-col gap-3">
-            <InputBox
+            <SInputBox
               type="email"
-              placeholder=""
-              onChange={() => {}}
               label="Email Address"
-              error={false}
               name="email"
+              register={register}
+              error={errors.email as { message: string } | undefined}
             />
-            <InputBox
-              type="text"
-              placeholder=""
-              onChange={() => {}}
+
+            <SInputBox
               label="First Name"
-              error={false}
               name="firstName"
+              register={register}
+              error={errors.firstName as { message: string } | undefined}
             />
-            <InputBox
-              type="text"
-              placeholder=""
-              onChange={() => {}}
+
+            <SInputBox
               label="Last Name"
-              error={false}
               name="lastName"
+              register={register}
+              error={errors.lastName as { message: string } | undefined}
             />
-            <button
-              type="submit"
-              className="hover:bg-blue-400 mt-5 flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
-            >
+
+            <SubmitButton type="submit" onClick={() => {}} icons={undefined}>
               Next
-            </button>
+            </SubmitButton>
           </div>
-          <p className=" mt-10 text-center text-sm text-gray-500">
+          <p className="mt-10 text-center text-sm text-gray-500">
             Already a user?{' '}
             <Link href="/login" className="text-blue-500 underline">
               Sign in here
@@ -70,4 +61,4 @@ function signin() {
   );
 }
 
-export default signin;
+export default SignIn;
