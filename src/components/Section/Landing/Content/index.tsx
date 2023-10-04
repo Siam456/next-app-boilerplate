@@ -1,5 +1,6 @@
-import { Button } from '@/components/buttons';
+
 import React from 'react';
+import { Button } from '@/components/buttons';
 
 export default function Content() {
 
